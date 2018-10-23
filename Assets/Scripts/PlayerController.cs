@@ -6,9 +6,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody m_rb;
     public float speed = 10.0F;
     public float max_speed = 12.0F;
-
-    public float Max_speed { get => max_speed; set => max_speed = value; }
-
+    public float jump_height = 750.0F;
     // Use this for initialization
     void Start()
     {
@@ -29,5 +27,8 @@ public class PlayerController : MonoBehaviour {
         m_rb.velocity = new Vector3(
             Mathf.Clamp(m_rb.velocity.x, -max_speed, max_speed),
             m_rb.velocity.y,m_rb.velocity.z);
+        //Jump Mechanic
+        if (Input.GetKeyDown(KeyCode.Space))
+            m_rb.AddForce(0.0F, Jump_height, 0.0F);
     }
 }
