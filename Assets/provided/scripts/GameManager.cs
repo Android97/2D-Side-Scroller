@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void OnDestroy()
     {
         // TODO 441: Store the GameManager's score into PersistGM
+        PersistGM.score = score;
     } 
 
     void Start()
@@ -41,7 +42,7 @@ public class GameManager : MonoBehaviour
         get { return _score; }
         set
         {
-            _score = value;
+            _score = 500;
             update_score_ui();
         }
     }
