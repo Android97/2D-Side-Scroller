@@ -14,9 +14,6 @@ public class ButtonController : MonoBehaviour {
     // 8 wide platform 3/4 trapdoor:  transform = {3,0,0} scale = {0.25,1,1}
     // 8 wide platform full trapdoor: transform = {4,0,0} scale = {0,   1,1}
     // 4 wide platform half trapdoor: transform = {1,0,0} scale = {0.5, 1,1}
-    // 4 wide platform full trapdoor: transform = {2,0,0} scale = {0,   1,1}
-    // 
-    // --- How to make a "Moving Platform"
     // This one is rather simple, fix the scale at {1,1,1} and just use the transform.
     // Here the transformation_time variable is important to make the player's movements 
     // smooth. Using approximately 4transform-to-1second is a good ratio.
@@ -61,6 +58,6 @@ public class ButtonController : MonoBehaviour {
     {
         Vector3 end = obj.transform.position + movement;
         // TODO 441: Call our MoveOverSeconds coroutine on the provided game object 
-        //StartCoroutine(...);
+        StartCoroutine( Utility.MoveOverSeconds(obj, end, delay_seconds) );
     }
 }

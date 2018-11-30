@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         m_rb = GetComponent<Rigidbody>();
+        m_collider = GetComponent<Collider>();
+        collider_radius = m_collider.bounds.extents.y;
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class PlayerController : MonoBehaviour {
         get_key_down_space = Input.GetKey(KeyCode.Space);
     }
 
-    private void fixedUpdate()
+    private void FixedUpdate()
     {
         float movement = get_axis_horizontal;
         m_rb.AddForce(new Vector3(movement * speed, 0.0F, 0.0F));
