@@ -15,9 +15,9 @@ public class FreerangeController : MonoBehaviour {
 
     void move_to_player()
     {
-        // TODO 441: update m_rb.velocity to be direction * speed
-        //      direction is the direction to the player GameObject
-        //      speed is the provided speed float value
+        direction = player.transform.position - transform.position;
+        direction = Vector3.Normalize(direction);
+        m_rb.velocity = dirsction * speed;
     }
 
     void OnTriggerEnter(Collider other)

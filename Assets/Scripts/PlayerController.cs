@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour {
     public string pickup_tag;
     public string livebox_tag;
     public string finish_tag;
+    public string obstacle_tag;
     public GameManager gm;
 
     // Use this for initialization
@@ -65,6 +66,11 @@ public class PlayerController : MonoBehaviour {
         if (other.gameObject.CompareTag(finish_tag))
         {
             gm.level_finished();
+        }
+        if (other.gameObject.CompareTag(obstacle_tag))
+        {
+            gm.game_over();
+            gameObject.SetActive(false);
         }
     }
 
