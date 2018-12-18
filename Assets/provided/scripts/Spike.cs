@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreeSpiker : MonoBehaviour {
+public class Spike : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
