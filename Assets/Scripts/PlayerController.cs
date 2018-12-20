@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour {
         }
         if (other.gameObject.CompareTag(finish_tag))
         {
+            gm.score += 500;
             gm.level_finished();
         }
         if (other.gameObject.CompareTag(obstacle_tag))
