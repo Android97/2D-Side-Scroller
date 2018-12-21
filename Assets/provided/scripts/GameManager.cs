@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // TODO 441: Restore the GameManager's score from PersistGM
+        score = PersistGM.score;
 
         // This makes it so that the score is printed as 0 to start with.
         update_score_ui();
@@ -42,7 +43,7 @@ public class GameManager : MonoBehaviour
         get { return _score; }
         set
         {
-            _score = 500;
+            _score = value;
             update_score_ui();
         }
     }
