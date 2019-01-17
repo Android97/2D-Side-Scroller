@@ -7,6 +7,7 @@ public class FreerangeController : MonoBehaviour {
     public GameObject player;
     public float speed = 1.0F;
     private Rigidbody m_rb;
+    private Vector3 direction;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,9 @@ public class FreerangeController : MonoBehaviour {
 
     void move_to_player()
     {
-
+        direction = player.transform.position - transform.position;
+        direction = Vector3.Normalize(direction);
+        m_rb.velocity = (direction * speed);
     }
 
     void OnTriggerEnter(Collider other)
